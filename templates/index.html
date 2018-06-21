@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block head %}
+    <title>{% block title %}{% endblock %}  Final Project </title>
+    {% endblock %}
+  </head>
+
+  <center><h1> Python for Applications</h1></center>
+
+   <center><h1>NLTK class </h1></center>
+  <body>
+
+    <center>
+        <nav>
+          <a href="/">Get Parts Of Speech</a> |
+          <a href="/getAllPartsOfSpeech">Get All Parts Of Speech</a> |
+          <a href="/searchForPartOfSpeech">Search for specific part of speech</a>
+        </nav>
+    </center>
+
+    <div id="content">{% block content %}
+
+ <br>
+<br>
+<center>
+
+    Enter the sentence that you want to get the parts of speech from: <br>
+    <form action="" method="POST">
+         <input type="text"  name="sentence" placeholder="Sentence" value=""><br>
+      <br>
+          <input type="submit" value="Get Parts of Speech!">
+    </form>
+</center>
+
+<p> {{sentences}}<br> </p>
+
+
+  {% for tuple in pos %}
+             <p>{{tuple}}</p>
+    {% endfor %}
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+    <div id="footer">
+      {% block footer %}
+
+      {% endblock %}
+    </div>
+
+  </body>
+</html>

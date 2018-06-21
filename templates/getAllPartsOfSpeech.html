@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+<body>
+
+{% block content %}
+<br>
+<br>
+<center>
+
+
+
+            Click this Button to show a full list of all parts of speech defined in the nltk file <br>
+    <form action="" method="POST">
+          <input type="submit" value="Get All!">
+    </form>
+
+
+  {% for line in file %}
+             <p>{{line}}</p>
+    {% endfor %}
+    </center>
+{% endblock %}
+
+</body>
